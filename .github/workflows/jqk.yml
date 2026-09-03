@@ -1,0 +1,41 @@
+name: 韭圈儿恐贪指数每日更新
+
+on:
+  schedule:
+    # UTC 13:00 = 北京时间 21:00（GitHub Actions 一律用 UTC）
+    # 注意：GitHub 不保证准点，高峰可能延迟 5~30 分钟，属正常现象
+    - cron: '0 13 * * *'
+  # 允许在 Actions 页面手动点「Run workflow」立刻跑一次
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # 允许用内置 GITHUB_TOKEN 把 jqk.json 提交回仓库
+
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 准备 Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 拉取韭圈儿恐贪指数 + 6 大成分
+        env:
+          JQK_TOKEN: ${{ secrets.JQK_TOKEN }}
+        run: node fetch_jqk_signed.js
+
+      - name: 提交 jqk.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add jqk.json
+          if git diff --cached --quiet; then
+            echo "数据与上次一致，跳过提交"
+          else
+            git commit -m "chore(jqk): update $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git push
+          fi
