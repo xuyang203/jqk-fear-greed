@@ -1,15 +1,15 @@
 {
   "main": {
-    "value": 12,
+    "value": 15,
     "status": "恐惧",
-    "date": "2026-11-04"
+    "date": "2026-11-05"
   },
   "components": [
     {
       "id": 1,
       "name": "指数波动",
       "full": "指数波动：50ETF期权波动率",
-      "value": 16.54,
+      "value": 15.95,
       "unit": "%",
       "status": "中立",
       "color": "#1890FF"
@@ -18,48 +18,48 @@
       "id": 2,
       "name": "避险天堂",
       "full": "避险天堂：股债回报差",
-      "value": -6.3708032,
+      "value": -5.1200129,
       "unit": "%",
-      "status": "极低",
+      "status": "较低",
       "color": "#1890FF"
     },
     {
       "id": 3,
       "name": "杠杆水平",
       "full": "杠杆水平：融资买入占比",
-      "value": 5.987262434,
+      "value": 7.944613421,
       "unit": "%",
-      "status": "极低",
+      "status": "较低",
       "color": "#1890FF"
     },
     {
       "id": 4,
       "name": "升贴水率",
       "full": "升贴水率：沪深300股指期货升贴水",
-      "value": -8.6525686,
+      "value": -7.9673758,
       "unit": "%",
-      "status": "中立",
+      "status": "较高",
       "color": "#1890FF"
     },
     {
       "id": 5,
       "name": "北上资金",
       "full": "北上资金：陆股通累计买入净额",
-      "value": 2039980.347439,
+      "value": 2120874.064757,
       "unit": "亿",
-      "status": "较高",
+      "status": "极高",
       "color": "#1890FF"
     },
     {
       "id": 6,
       "name": "股价强度",
       "full": "股价强度：创新高个股数量占比",
-      "value": 0.1792757,
+      "value": 0.3226963,
       "unit": "%",
-      "status": "极低",
+      "status": "较低",
       "color": "#1890FF"
     }
   ],
-  "updatedAt": "2026-11-04T20:15:04.889Z",
+  "updatedAt": "2026-11-05T20:27:29.366Z",
   "source": "jiucaishuo kjtl"
 }
